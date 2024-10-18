@@ -1,20 +1,17 @@
 #section 1
-def selectionsort(arr):
-    n = len(arr)
-    for i in range(n):
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
        
-        min_index = i
-        print(f"Step {i + 1}: Current array: {arr}")
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
         
-       
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        
-        arr[i], arr[min_index] = arr[min_index], arr[i]
-        print(f"Swapping {arr[min_index]} and {arr[i]}")
-        print(f"Array after step {i + 1}: {arr}\n")
+        print(f"Step {i+1}: {arr}")
 
 
-arr = [33, 20, 10, 18, 9]
-selectionsort(arr)
+arr = [67, 29, 15, 22, 14]
+print(arr)
+selection_sort(arr)
+print(arr)
